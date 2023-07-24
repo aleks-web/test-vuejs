@@ -283,6 +283,14 @@ export default {
      * @param {Number} groupId - id группы
      */
     addPlayerInGroup(playerId, groupId) {
+      if (this.getPleyersCountInGroup(groupId) < this.maxPlayersInGroup && this.groups.at(-1).group_id > groupId) {
+        this.setActiveGroup(groupId + 1);
+      }
+
+      if (this.groups.at(-1).group_id == groupId) {
+        this.setActiveGroup(groupId);
+      }
+
       if (this.getGroupPlayerById(playerId) == groupId) {
         alert("Человек уже состоит в данной группе");
         return;
@@ -290,26 +298,19 @@ export default {
 
       if (this.getPleyersCountInGroup(groupId) >= this.maxPlayersInGroup) {
         alert(`Максимальное количестов человек в каждой группе: ${this.maxPlayersInGroup}`);
+        if (this.groups.at(-1).group_id > groupId) {
+          this.setActiveGroup(groupId + 1);
+        }
         return;
       }
 
       if (this.getPleyersCountInGroup(groupId) < this.maxPlayersInGroup && groupId && playerId) {
-        this.setActiveGroup(groupId);
-
         let arr = {
           player_id: playerId,
           group_id: groupId,
         };
 
         this.result.push(arr);
-
-        if (this.getPleyersCountInGroup(this.nowGroup) == this.maxPlayersInGroup && this.groups.at(-1).group_id < groupId) {
-          this.setActiveGroup(groupId + 1);
-
-          if (groupId > this.groups.length) {
-            this.unsetActiveGroup();
-          }
-        }
       }
 
       this.$root.isSaved = false;
