@@ -18,6 +18,6 @@ npm run serve
 npm run build
 ```
 
-### Customize configuration
+### Мои контакты
 
-Мой телеграм: [t.me/webalexey](https://t.me/webalexey).
+Мой телеграм: [t.me/webalexey](https://t.me/webalexey). - лучший способ связи
