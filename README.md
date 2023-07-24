@@ -1,19 +1,23 @@
-# test
+# Тестовое задание
 
-## Project setup
+## Установка проекта
+
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Запуск проекта в режиме разработки
+
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### Компилировать в production
+
 ```
 npm run build
 ```
 
 ### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+
+Мой телеграм: [t.me/webalexey](https://t.me/webalexey).
